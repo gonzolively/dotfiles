@@ -93,4 +93,4 @@ echo -n "\n"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Alias for my git bare repo dotfile stuff
-alias config='/usr/bin/git --git-dir=/home/knox/.dotfiles/ --work-tree=/home/knox'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
