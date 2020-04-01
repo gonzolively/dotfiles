@@ -1,0 +1,27 @@
+[global_config]
+  extra_styling = False
+  title_inactive_fg_color = "#ffffff"
+  title_inactive_bg_color = "#ffffff"
+  enabled_plugins = ,
+[keybindings]
+[profiles]
+  [[default]]
+    icon_bell = False
+    background_darkness = 0.8
+    cursor_color = "#aaaaaa"
+    font = Monospace 9
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_lines = 4000
+    use_system_font = False
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]
