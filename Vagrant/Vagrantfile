@@ -5,6 +5,8 @@ machine_name = "vagrant"
 # Ubuntu Server
  config.vm.box = "ubuntu/trusty64"
  config.vm.host_name = machine_name
+ config.vm.synced_folder "~/Repos/ansible-workstation", "/tmp/ansible"
+ config.vm.provision "file", source: "~/.vault_pass.txt", destination: "/tmp/ansible/.vault_pass.txt"
  
 
 config.ssh.forward_agent = true
@@ -24,16 +26,18 @@ config.vm.network "private_network", ip: "192.168.236.77"
 
 # Custom shell script to provision
   $script = <<-SCRIPT
-  echo I am provisioning...
-  date > /etc/vagrant_provisioned_at
+  addgroup knox
+  useradd knox --create-home -g knox | true
+  chown knox:knox /home/knox -R
   SCRIPT
 
  config.vm.provision "shell", inline: $script
 
  # Test individual playbooks here 
- config.vm.provision "ansible" do |ansible|
-    ansible.version = "2.8.3"
-	ansible.limit = 'all,localhost'
-	ansible.playbook = "/home/knox/Repos/ansible-workstation/deploy.yml"
+ config.vm.provision "ansible_local" do |ansible|
+	ansible.compatibility_mode = "2.0"
+    ansible.limit = 'all,localhost'
+    ansible.raw_arguments  = "--vault-password-file=/tmp/ansible/.vault_pass.txt"
+	ansible.playbook = "/tmp/ansible/deploy.yml"
  end
 end
