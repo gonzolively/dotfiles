@@ -32,19 +32,20 @@ antigen bundle heroku
 antigen bundle pip
 antigen bundle colored-man-pages
 
-# Syntax highlighting bundle.
+# Community bundles
+antigen bundle chrissicool/zsh-256color
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 
-# Load the theme.
+# load theme (local)
 #antigen theme robbyrussell
 #antigen theme jnrowe
-
 antigen theme gnzh
 #antigen theme pygmalion
 #antigen theme agnoster
 
+# load theme (community)
 #antigen theme romkatv/powerlevel10k powerlevel10k
 
 

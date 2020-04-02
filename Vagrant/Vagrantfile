@@ -1,0 +1,39 @@
+Vagrant.configure(2) do |config|
+
+machine_name = "vagrant"
+
+# Ubuntu Server
+ config.vm.box = "ubuntu/trusty64"
+ config.vm.host_name = machine_name
+ 
+
+config.ssh.forward_agent = true
+
+config.vm.network "private_network", ip: "192.168.236.77"
+#config.vm.network "public_network", ip: "172.20.2.77", bridge: "en0: Wi-Fi (AirPort)"
+
+# SSH port forward for external login
+ config.vm.network "forwarded_port", guest:22, host:2223
+
+ # Virtualbox Provider Specifics
+ config.vm.provider :virtualbox do |vb|
+  vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+  vb.name = machine_name
+  vb.memory = 1024
+ end
+
+# Custom shell script to provision
+  $script = <<-SCRIPT
+  echo I am provisioning...
+  date > /etc/vagrant_provisioned_at
+  SCRIPT
+
+ config.vm.provision "shell", inline: $script
+
+ # Test individual playbooks here 
+ config.vm.provision "ansible" do |ansible|
+    ansible.version = "2.8.3"
+	ansible.limit = 'all,localhost'
+	ansible.playbook = "/home/knox/Repos/ansible-workstation/deploy.yml"
+ end
+end
