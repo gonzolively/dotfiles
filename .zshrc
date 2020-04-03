@@ -37,6 +37,7 @@ antigen bundle chrissicool/zsh-256color
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
+antigen bundle fcambus/ansiweather
 
 # load theme (local)
 #antigen theme robbyrussell
@@ -65,6 +66,7 @@ HISTFILESIZE=10000
 # Custom Alias'
 alias vi=vim
 alias edit=vim
+alias weather=ansiweather
 
 # Fix globbing issues
 setopt +o nomatch
