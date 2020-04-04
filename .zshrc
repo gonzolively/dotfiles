@@ -67,6 +67,7 @@ HISTFILESIZE=10000
 alias vi=vim
 alias edit=vim
 alias weather=ansiweather
+alias newbox='vagrant destroy -f && clear && vagrant up'
 
 # Fix globbing issues
 setopt +o nomatch
