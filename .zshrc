@@ -11,10 +11,10 @@ fi
 export TERM="xterm-256color"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/knox/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Get antigen up and running
-source /home/knox/.oh-my-zsh/plugins/antigen.zsh
+source $HOME/.oh-my-zsh/plugins/antigen.zsh
 
 # Uncomment the following line to automatically update without prompting.
 DISABLE_UPDATE_PROMPT="true"
