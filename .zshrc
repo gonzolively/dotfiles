@@ -28,7 +28,6 @@ export UPDATE_ZSH_DAYS=1
 
 # Bundles from the default repo (oh-my-zsh)
 antigen bundle git
-antigen bundle heroku
 antigen bundle pip
 antigen bundle colored-man-pages
 
