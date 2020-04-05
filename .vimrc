@@ -111,6 +111,7 @@ set spellfile=~/.vim/spell/en.utf-8.add
 filetype plugin indent on       
 
 "Highlight specific options
+hi CursorLine gui=underline cterm=underline                "Highlight current line
 hi Visual term=none cterm=none ctermbg=LightGrey
 hi Search term=reverse ctermbg=8 guibg=LightGrey
 hi Pmenu ctermfg=0 ctermbg=117
