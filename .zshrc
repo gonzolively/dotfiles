@@ -83,7 +83,7 @@ current_driver=$(nvidia-smi | grep 'Driver Version:' | cut -d ":" -f2 | cut -d '
 available_drivers=$(ubuntu-drivers devices | grep nvidia-driver | cut -d ":" -f2 | cut -d " " -f2 | sort -r)
 
 echo -e "\n\e[92mDriver Version:\e[0m $current_driver"
-echo -e "\n\e[31mAvailable Drivers:\e[0m\n\n$available_drivers\n"
+echo -e "\n\e[31mAvailable Drivers:\e[0m\n$available_drivers\n"
 }
 
 color_test () {
