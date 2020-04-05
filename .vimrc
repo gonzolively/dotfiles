@@ -65,7 +65,6 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 "General Settings
 colorscheme antares
-hi CursorLine gui=underline cterm=underline
 set autoread				   " Automatically reload file on changes
 set backspace=indent,eol,start " Sets backspace to delete
 set clipboard=unnamed
