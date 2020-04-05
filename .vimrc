@@ -1,6 +1,8 @@
 " Vundle Specific Options
+
 filetype off         			    " Required for Vundle
-set rtp+=~/.vim/bundle/Vundle.vim	" Add vundle to the RuntimePath
+set nocompatible
+set rtp+=$HOME/.vim/bundle/Vundle.vim	" Add vundle to the RuntimePath
 call vundle#begin()
 
 
