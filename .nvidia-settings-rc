@@ -2,7 +2,7 @@
 # /home/knox/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
-# Generated on Fri Mar 27 15:31:47 2020
+# Generated on Mon Apr  6 13:02:28 2020
 #
 
 # ConfigProperties:
@@ -13,9 +13,9 @@ SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = No
 ShowQuitDialog = No
 UpdateRulesOnProfileNameChange = Yes
-Timer = Memory_Used_(GPU_0),Yes,3000
-Timer = Thermal_Monitor_(GPU_0),Yes,1000
 Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = Memory_Used_(GPU_0),Yes,3000
 
 # Attributes:
 
@@ -25,10 +25,10 @@ Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 0/TextureClamping=1
 0/FXAA=0
 0/AllowFlipping=1
-0/FSAAAppControlled=1
+0/FSAAAppControlled=0
 0/LogAnisoAppControlled=1
 0/OpenGLImageSettings=1
-0/FSAAAppEnhanced=0
+0/FSAAAppEnhanced=1
 0/ShowGraphicsVisualIndicator=0
 [DPY:VGA-0]/RedBrightness=0.000000
 [DPY:VGA-0]/GreenBrightness=0.000000

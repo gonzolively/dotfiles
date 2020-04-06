@@ -1,0 +1,1 @@
+{"virtualbox":{"/tmp/ansible":{"guestpath":"/tmp/ansible","hostpath":"/home/knox/Repos/ansible-workstation","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/knox/Vagrant","disabled":false,"__vagrantfile":true}}}

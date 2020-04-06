@@ -48,12 +48,10 @@ antigen theme gnzh
 # load theme (community)
 #antigen theme romkatv/powerlevel10k powerlevel10k
 
-
 # Tell Antigen that you're done.
 antigen apply
 
 source $ZSH/oh-my-zsh.sh
-
 #########################
 ##### CUSTOM STUFFS #####
 #########################
@@ -71,21 +69,20 @@ alias newbox='vagrant destroy -f && clear && vagrant up'
 # Fix globbing issues
 setopt +o nomatch
 
-
 #########################
 ####### Functions #######
 #########################
 
 # Function to get currently install nvidia drivers, as well as availble drivers
 get_nvidiadrivers () {
-# This function will display the currently installed nvidia driver, and which ones are availble.
+sudo apt-get update &&
 current_driver=$(nvidia-smi | grep 'Driver Version:' | cut -d ":" -f2 | cut -d ' ' -f 2 | cut -d '.' -f 1)
 available_drivers=$(ubuntu-drivers devices | grep nvidia-driver | cut -d ":" -f2 | cut -d " " -f2 | sort -r)
-
 echo -e "\n\e[92mDriver Version:\e[0m $current_driver"
-echo -e "\n\e[31mAvailable Drivers:\e[0m\n$available_drivers\n"
+echo -e "\n\e[31mAvailable Drivers:\e\e[0m\n$available_drivers\n"
 }
 
+# Echos all 256 colors to terminal
 color_test () {
 echo -n "\n"
 curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash
