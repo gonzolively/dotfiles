@@ -1,0 +1,34 @@
+Vagrant.configure(2) do |config|
+
+machine_name = "vagrant"
+
+# Ubuntu Server
+ config.vm.box = "bento/ubuntu-19.10"
+ config.vm.host_name = machine_name
+ config.vm.synced_folder "~/Repos/ansible-workstation", "/tmp/ansible"
+ config.vm.provision "file", source: "~/.vault_pass.txt", destination: "/tmp/ansible/.vault_pass.txt"
+ 
+
+config.ssh.forward_agent = true
+
+config.vm.network "private_network", ip: "192.168.236.77"
+#config.vm.network "public_network", ip: "172.20.2.77", bridge: "en0: Wi-Fi (AirPort)"
+
+# SSH port forward for external login
+ config.vm.network "forwarded_port", guest:22, host:2223
+
+ # Virtualbox Provider Specifics
+ config.vm.provider :virtualbox do |vb|
+  vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+  vb.name = machine_name
+  vb.memory = 1024
+ end
+
+ # Test individual playbooks here 
+ config.vm.provision "ansible_local" do |ansible|
+	ansible.compatibility_mode = "2.0"
+    ansible.limit = 'all,localhost'
+    ansible.raw_arguments  = "--vault-password-file=/tmp/ansible/.vault_pass.txt"
+	ansible.playbook = "/tmp/ansible/deploy.yml"
+ end
+end
