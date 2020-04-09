@@ -75,7 +75,7 @@ setopt +o nomatch
 
 # Function to get currently install nvidia drivers, as well as availble drivers
 get_nvidiadrivers () {
-sudo apt-get update &&
+sudo apt-get update > /dev/null &&
 current_driver=$(nvidia-smi | grep 'Driver Version:' | cut -d ":" -f2 | cut -d ' ' -f 2 | cut -d '.' -f 1)
 available_drivers=$(ubuntu-drivers devices | grep nvidia-driver | cut -d ":" -f2 | cut -d " " -f2 | sort -r)
 echo -e "\n\e[92mDriver Version:\e[0m $current_driver"
