@@ -23,6 +23,8 @@ Plugin 'vim-scripts/SearchComplete'
 Plugin 'itchyny/lightline.vim'        " https://github.com/itchyny/lightline.vim
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Align'
+Plugin 'ryanoasis/vim-devicons'
+
 
 "File-type specific plugins
 Plugin 'iamcco/markdown-preview.nvim' "run in vim after install :call mkdp#util#install()

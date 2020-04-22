@@ -11,7 +11,6 @@ fi
 # Ensure snap is in path
 export PATH=$PATH:/snap/bin
 
-
 export TERM="xterm-256color"
 
 # Path to your oh-my-zsh installation.
@@ -69,6 +68,7 @@ alias vi=vim
 alias edit=vim
 alias weather=ansiweather
 alias newbox='vagrant destroy -f && clear && vagrant up'
+alias lynx="lynx --accept-all-cookies www.google.com"
 
 # Fix globbing issues
 setopt +o nomatch
