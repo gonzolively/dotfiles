@@ -80,7 +80,7 @@ setopt +o nomatch
 # Function to get currently install nvidia drivers, as well as availble drivers
 get_nvidiadrivers () {
 sudo apt-get update > /dev/null &&
-current_driver=$(nvidia-smi | grep 'Driver Version:' | cut -d ":" -f2 | cut -d ' ' -f 2 | cut -d '.' -f 1)
+current_driver=$(nvidia-smi | grep 'Driver Version:' | cut -d ":" -f2 | cut -d ' ' -f 2)
 available_drivers=$(ubuntu-drivers devices | grep nvidia-driver | cut -d ":" -f2 | cut -d " " -f2 | sort -r)
 echo -e "\n\e[92mDriver Version:\e[0m $current_driver"
 echo -e "\n\e[31mAvailable Drivers:\e\e[0m\n$available_drivers\n"
@@ -91,6 +91,10 @@ color_test () {
 echo -n "\n"
 curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash
 echo -n "\n"
+}
+
+JBLFlip () {
+bluetoothctl $1 B8:F6:53:19:CA:67
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
