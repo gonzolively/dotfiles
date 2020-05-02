@@ -10,12 +10,10 @@ call vundle#begin()
 Plugin 'ajh17/VimCompletesMe'
 Plugin 'felixhummel/setcolors.vim'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'kien/ctrlp.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'Townk/vim-autoclose'
-Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-ragtag'
 Plugin 'vim-scripts/closetag.vim'
 Plugin 'vim-scripts/IndentAnything'
@@ -30,7 +28,6 @@ Plugin 'iamcco/markdown-preview.nvim' "run in vim after install :call mkdp#util#
 Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-python/python-syntax'
 Plugin 'chase/vim-ansible-yaml'
-Plugin 'darfink/vim-plist'
 Plugin 'elzr/vim-json'
 Plugin 'mrk21/yaml-vim'
 Plugin 'sukima/xmledit'
@@ -41,6 +38,7 @@ let g:mkdp_auto_close=0
 let g:mkdp_refresh_slow=1
 let g:mkdp_page_title = ''
 let g:mkdp_markdown_css='/home/knox/Drive/Programming/Markdown/github-markdown.css'
+nmap <c-p> :MarkdownPreview   " Preview Markdown file with Ctrl + p
 
 "plasticboy/vim-markdown
 autocmd FileType markdown let b:sleuth_automatic=0
@@ -116,10 +114,6 @@ hi Pmenu ctermfg=0 ctermbg=117
 "NerdTree specific options
 let NERDTreeShowHidden=1
 map <C-n> :NERDTreeToggle<CR>   " Toggle NerdTree with Control n
-
-"Statusline tweaks
-"set laststatus=2
-"set statusline=%F%m%r%h%w\ [%{&ff}]\%=\[POS=%v,%l,%L]\[%p%%]
 
 
 "#################################### Status Bar ######################################
