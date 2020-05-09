@@ -22,7 +22,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Align'
 Plugin 'ryanoasis/vim-devicons'
 
-
 "File-type specific plugins
 Plugin 'iamcco/markdown-preview.nvim' "run in vim after install :call mkdp#util#install()
 Plugin 'plasticboy/vim-markdown'
@@ -31,6 +30,8 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'elzr/vim-json'
 Plugin 'mrk21/yaml-vim'
 Plugin 'sukima/xmledit'
+Plugin 'ap/vim-css-color'
+
 call vundle#end()
 
 "iamcco/markdown-preview.nvim
@@ -58,6 +59,7 @@ let python_highlight_file_headers_as_comments=1
 "Autocomplete settings
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+"chrisbra/Colorizer
 
 "General Settings
 colorscheme antares
