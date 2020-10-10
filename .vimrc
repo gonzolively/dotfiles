@@ -35,11 +35,26 @@ Plugin 'ap/vim-css-color'
 call vundle#end()
 
 "iamcco/markdown-preview.nvim
+nmap <c-p> :MarkdownPreview   " Preview Markdown file with Ctrl + p
 let g:mkdp_auto_close=0
 let g:mkdp_refresh_slow=1
 let g:mkdp_page_title = ''
 let g:mkdp_markdown_css='/home/knox/Drive/Programming/Markdown/github-markdown.css'
-nmap <c-p> :MarkdownPreview   " Preview Markdown file with Ctrl + p
+
+let g:mkdp_preview_options = {
+    \ 'mkit': {},
+    \ 'katex': {},
+    \ 'uml': {},
+    \ 'maid': {},
+    \ 'disable_sync_scroll': 0,
+    \ 'sync_scroll_type': 'middle',
+    \ 'hide_yaml_meta': 1,
+    \ 'sequence_diagrams': {},
+    \ 'flowchart_diagrams': {},
+    \ 'content_editable': v:false,
+    \ 'disable_filename': 1
+    \ }
+
 
 "plasticboy/vim-markdown
 autocmd FileType markdown let b:sleuth_automatic=0
