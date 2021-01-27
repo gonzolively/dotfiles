@@ -97,6 +97,12 @@ JBLFlip () {
 bluetoothctl $1 B8:F6:53:19:CA:67
 }
 
+cleanApt () {
+sudo rm /var/lib/apt/lists/* -vf
+sudo apt-get clean
+sudo apt-get update
+}
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
