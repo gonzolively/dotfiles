@@ -44,12 +44,12 @@ antigen bundle fcambus/ansiweather
 # load theme (local)
 #antigen theme robbyrussell
 #antigen theme jnrowe
-antigen theme gnzh
+#antigen theme gnzh
 #antigen theme pygmalion
 #antigen theme agnoster
 
 # load theme (community)
-#antigen theme romkatv/powerlevel10k powerlevel10k
+antigen theme romkatv/powerlevel10k powerlevel10k
 
 # Tell Antigen that you're done.
 antigen apply
