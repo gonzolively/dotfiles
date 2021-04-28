@@ -97,6 +97,10 @@ JBLFlip () {
 bluetoothctl $1 B8:F6:53:19:CA:67
 }
 
+buildDocs () {
+make clean; make html
+}
+
 cleanApt () {
 sudo rm /var/lib/apt/lists/* -vf
 sudo apt-get clean
