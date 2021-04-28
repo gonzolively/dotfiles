@@ -107,6 +107,16 @@ sudo apt-get clean
 sudo apt-get update
 }
 
+enableGPUSwitching () {
+# While charging use discrete grahpics; while on battery use integrated graphics
+sudo pmset -c gpuswitch 1 && sudo pmset -b gpuswitch 0
+}
+
+disableGPUSwitching () {
+sudo pmset -a gpuswitch 2
+}
+
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
