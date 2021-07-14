@@ -5,9 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Ensure snap is in path
 export PATH=$PATH:/snap/bin
 
@@ -55,6 +52,7 @@ antigen theme romkatv/powerlevel10k powerlevel10k
 antigen apply
 
 source $ZSH/oh-my-zsh.sh
+
 #########################
 ##### CUSTOM STUFFS #####
 #########################
@@ -77,6 +75,8 @@ setopt +o nomatch
 ####### Functions #######
 #########################
 
+### Linux ###
+
 # Function to get currently install nvidia drivers, as well as availble drivers
 get_nvidiadrivers () {
 sudo apt-get update > /dev/null &&
@@ -86,25 +86,20 @@ echo -e "\n\e[92mDriver Version:\e[0m $current_driver"
 echo -e "\n\e[31mAvailable Drivers:\e\e[0m\n$available_drivers\n"
 }
 
-# Echos all 256 colors to terminal
-color_test () {
-echo -n "\n"
-curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash
-echo -n "\n"
-}
-
 JBLFlip () {
 bluetoothctl $1 B8:F6:53:19:CA:67
-}
-
-buildDocs () {
-make clean; make html
 }
 
 cleanApt () {
 sudo rm /var/lib/apt/lists/* -vf
 sudo apt-get clean
 sudo apt-get update
+}
+
+### Mac ####
+
+buildDocs () {
+make clean; make html
 }
 
 enableGPUSwitching () {
@@ -116,6 +111,14 @@ disableGPUSwitching () {
 sudo pmset -a gpuswitch 2
 }
 
+### Global ###
+
+# Echos all 256 colors to terminal
+color_test () {
+echo -n "\n"
+curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash
+echo -n "\n"
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
